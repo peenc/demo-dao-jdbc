@@ -6,7 +6,6 @@ import java.util.Scanner;
 import model.dao.DaoFactory;
 import model.dao.DepartmentDao;
 import model.entities.Department;
-import model.entities.Seller;
 
 public class Program2 {
 
@@ -19,29 +18,28 @@ public class Program2 {
 		Department department = departmentDao.findyById(3);
 		System.out.println(department);
 
-		System.out.println("\n=== TEST 3: Seller findAll ===");
+		System.out.println("\n=== TEST 2: Seller findAll ===");
 		
-		//continuar daqui
-		List<Seller> list = departmentDao.findAll();
+		List<Department> list = departmentDao.findAll();
 		
-		for (Seller obj : list) {
+		for (Department obj : list) {
 			System.out.println(obj);
 		}
 
-		System.out.println("\n=== TEST 4: Department Insert ===");
+		System.out.println("\n=== TEST 3: Department Insert ===");
 
 		Department newDepartment = new Department(null, "Music");
 		// departmentDao.insert(newDepartment);
 		System.out.println("Inserted! New id = " + newDepartment.getId());
 
-		System.out.println("\n=== TEST 5: Department Update ===");
+		System.out.println("\n=== TEST 4: Department Update ===");
 		department = departmentDao.findyById(15);
 		department.setName("Developers");
 		departmentDao.update(department);
 		System.out.println("Update completed");
 		System.out.println(department);
 
-		System.out.println("\n=== TEST 6: Department Delete from Id ===");
+		System.out.println("\n=== TEST 5: Department Delete from Id ===");
 		System.out.println("Enter id for delete department: ");
 		int id = sc.nextInt();
 		departmentDao.deletById(id);
